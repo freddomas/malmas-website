@@ -1,0 +1,368 @@
+export const translations = {
+  fr: {
+    nav: {
+      home: 'Accueil',
+      expertise: 'Expertise',
+      approach: 'Approche',
+      clients: 'Clients',
+      contact: 'Contact',
+    },
+    hero: {
+      badge: '✓ De confiance pour 10+ Institutions gouvernementales et critiques',
+      titlePart1: 'Infrastructure',
+      titlePart2: 'Bâtie pour Zéro Tolérance',
+      titlePart3: 'Souveraine. Résiliente. Auditable.',
+      subtitle: 'Nous concevons des infrastructures critiques aux plus hauts standards de résilience et sécurité.',
+      uptime: '98% de disponibilité.',
+      compliance: 'Conformité complète.',
+      impact: 'Impact mesurable.',
+      description: 'Où les ministères gouvernementaux, les banques nationales et les opérateurs d\'infrastructures critiques dépendent d\'architectures qui ne défaillent jamais.',
+      cta: 'Demander une évaluation',
+      learnMore: 'En savoir plus',
+    },
+    results: {
+      title: 'Bilan Éprouvé',
+      description: 'Infrastructures à grande échelle livrées avec un engagement implacable envers la fiabilité et la sécurité',
+      metrics: {
+        uptime: {
+          label: 'Disponibilité Garantie',
+          description: 'Disponibilité minimum de 98% pour systèmes critiques',
+        },
+        clients: {
+          label: 'Clients Institutionnels',
+          description: 'Agences gouvernementales et opérateurs d\'infrastructures critiques',
+        },
+        infrastructure: {
+          label: 'Infrastructures en Production',
+          description: 'Architectures conçues en Afrique et en Europe',
+        },
+        experience: {
+          label: 'Années d\'Expertise',
+          description: 'Expérience collective dans les systèmes critiques',
+        },
+      },
+    },
+    expertise: {
+      title: 'Expertise qui Évolue',
+      subtitle: 'Face à Chaque Défi',
+      description: 'Chaque transformation d\'infrastructure nécessite des connaissances spécialisées. Nous couvrons l\'ensemble du spectre de l\'architecture des systèmes critiques avec des méthodologies et des résultats éprouvés.',
+      items: {
+        gov: {
+          title: 'Architecture Infrastructure Gouvernementale',
+          problem: 'Les gouvernements doivent construire des infrastructures résilientes et souveraines',
+          approach: 'Design HLD/LLD complet + modélisation de résilience',
+          result: 'Systèmes nationals critiques opérationnels',
+        },
+        cyber: {
+          title: 'Gouvernance Cybersécurité',
+          problem: 'Gestion des risques à l\'échelle institutionnelle',
+          approach: 'Frameworks de sécurité adaptés + audit continu',
+          result: 'Posture de sécurité renforcée',
+        },
+        ad: {
+          title: 'Plan de Continuité d\'Activité',
+          problem: 'Assurer la continuité des opérations critiques en cas de sinistre',
+          approach: 'Stratégie Recovery + RTO/RPO optimisés',
+          result: 'Capacité de reprise garantie',
+        },
+        datacenter: {
+          title: 'Redondance & Résilience',
+          problem: 'Éliminer les points uniques de défaillance',
+          approach: 'Architecture N+1 + synchronisation temps réel',
+          result: 'Zéro downtime assuré',
+        },
+        monitoring: {
+          title: 'NSOC & Stratégie de Monitoring',
+          problem: 'Visibilité complète sur infrastructures critiques',
+          approach: 'Stack monitoring premium + alertes intelligentes',
+          result: 'Temps de réaction en minutes',
+        },
+        audit: {
+          title: 'Développement Web & Automatisation IA',
+          problem: 'Moderniser applications legacy avec IA et web',
+          approach: 'Architecture progressive + ML pipelines',
+          result: 'Applications intelligentes et scalables',
+        },
+      },
+    },
+    approach: {
+      title: 'Notre Approche',
+      description: 'Une méthodologie 5 étapes éprouvée garantissant le succès par la transparence et la collaboration',
+      steps: {
+        step1: 'Évaluation Stratégique',
+        step2: 'Blueprint Architecture Cible (HLD/LLD)',
+        step3: 'Modélisation Sécurité & Résilience',
+        step4: 'Roadmap de Déploiement',
+        step5: 'Gouvernance & Documentation',
+      },
+      stepDescriptions: {
+        step1: 'Audit complet de votre environnement existant et définition claire des objectifs de transformation.',
+        step2: 'Documentation HLD/LLD détaillée, alignée sur standards enterprise et vos contraintes.',
+        step3: 'Modélisation des scénarios de résilience et frameworks de sécurité complets.',
+        step4: 'Planification d\'implémentation par phases avec jalons clairs et métriques.',
+        step5: 'Documentation gouvernance, runbooks opérationnels et formation complète équipe.',
+      },
+      challenge: 'Défi',
+      ourApproach: 'Notre Approche',
+      measurableResult: 'Résultat Mesurable',
+    },
+    trustSignals: {
+      title: 'Construit pour la Confiance & Conformité',
+      description: 'Sécurité de niveau entreprise avec transparence complète et validation tierce',
+      signals: {
+        iso: {
+          title: 'ISO 27001 Conformes',
+          description: 'Management de la Sécurité de l\'Information conforme aux normes internationales',
+        },
+        sla: {
+          title: 'SLA Minimum 98%',
+          description: 'Garantie de disponibilité contractuelle avec architecture redondante multiplifiée',
+        },
+        soc2: {
+          title: 'SOC 2 Type II',
+          description: 'Contrôles de sécurité, disponibilité et confidentialité vérifiés indépendamment',
+        },
+        vendor: {
+          title: 'Certifiés Fournisseurs',
+          description: 'Partenaires AWS, Cisco, Fortinet, Palo Alto Networks avec expertise éprouvée',
+        },
+        audit: {
+          title: 'Audités Indépendamment',
+          description: 'Revues de sécurité tierces sur toutes les conceptions d\'infrastructures critiques',
+        },
+        zero: {
+          title: 'Déploiements Zéro Downtime',
+          description: 'Méthodologie éprouvée pour les migrations production sans interruption de service',
+        },
+      },
+    },
+    ceo: {
+      title: 'Frédéric Masiala',
+      role: 'Fondateur & Lead Infrastructure Architect',
+      bio: '15+ ans d\'expérience en design d\'infrastructures critiques en Europe et en Afrique.',
+    },
+    clients: {
+      title: 'Ils nous ont fait confiance',
+      description: 'Des institutions gouvernementales et critiques en RDC et en Afrique de l\'Ouest nous font confiance pour leurs infrastructures.',
+    },
+    certifications: {
+      title: 'Certifications & Méthodologies',
+      description: 'Nos experts sont certifiés par les plus grands standards de l\'industrie.',
+    },
+    contact: {
+      titlePart1: 'Prêt à Transformer',
+      titlePart2: 'Votre Infrastructure?',
+      titlePart3: 'Parlons-en',
+      description: 'Planifiez une consultation confidentielle avec nos architectes principaux. Nous évaluerons votre environnement actuel et esquisserons un chemin à suivre.',
+      callUs: 'Appelez-nous',
+      speakDirectly: 'Parlez directement à un architecte',
+      emailUs: 'Email',
+      sendRequirements: 'Envoyez-nous vos exigences',
+      visitUs: 'Visite',
+      scheduleOnSite: 'Planifiez une réunion sur site',
+      kinshasa: 'Kinshasa, RDC',
+      describeChallenge: 'Décrivez Votre Défi',
+      form: {
+        name: 'Nom complet *',
+        namePlaceholder: 'Votre nom',
+        email: 'Adresse Email *',
+        emailPlaceholder: 'Votre email',
+        company: 'Entreprise *',
+        companyPlaceholder: 'Votre entreprise',
+        message: 'Message *',
+        messagePlaceholder: 'Décrivez votre défi...',
+        submit: 'Envoyer',
+        sending: 'Envoi en cours...',
+        success: '✓ Merci. Nous examinons votre message et vous contacterons dans 24 heures.',
+        error: 'Erreur lors de l\'envoi. Veuillez réessayer ou nous appeler directement.',
+      },
+    },
+    cta: {
+      zeroTolerance: 'Chaque projet est construit sans tolérance pour les défaillances et avec transparence totale avec les parties prenantes',
+    },
+  },
+  en: {
+    nav: {
+      home: 'Home',
+      expertise: 'Expertise',
+      approach: 'Approach',
+      clients: 'Clients',
+      contact: 'Contact',
+    },
+    hero: {
+      badge: '✓ Trusted by 10+ Government & Critical Institutions',
+      titlePart1: 'Infrastructure',
+      titlePart2: 'Built for Zero Tolerance',
+      titlePart3: 'Sovereign. Resilient. Auditable.',
+      subtitle: 'We architect critical infrastructure at the highest standards of resilience and security.',
+      uptime: '98% uptime.',
+      compliance: 'Full compliance.',
+      impact: 'Measurable impact.',
+      description: 'Where government ministries, national banks, and critical infrastructure operators depend on architectures that never fail.',
+      cta: 'Request Assessment',
+      learnMore: 'Learn More',
+    },
+    results: {
+      title: 'Proven Track Record',
+      description: 'Large-scale infrastructure delivered with relentless commitment to reliability and security',
+      metrics: {
+        uptime: {
+          label: 'Guaranteed Uptime',
+          description: 'Minimum 98% uptime for mission-critical systems',
+        },
+        clients: {
+          label: 'Institutional Clients',
+          description: 'Government agencies and critical infrastructure operators',
+        },
+        infrastructure: {
+          label: 'Infrastructure in Production',
+          description: 'Designed architectures across Africa and Europe',
+        },
+        experience: {
+          label: 'Years of Expertise',
+          description: 'Collective experience in critical systems',
+        },
+      },
+    },
+    expertise: {
+      title: 'Expertise That Scales',
+      subtitle: 'to Any Challenge',
+      description: 'Every infrastructure transformation requires specialized knowledge. We cover the entire spectrum of critical systems architecture with proven methodologies and outcomes.',
+      items: {
+        gov: {
+          title: 'Government Infrastructure Architecture',
+          problem: 'Governments must build resilient, sovereign infrastructures',
+          approach: 'Complete HLD/LLD design + resilience modeling',
+          result: 'National critical systems operational',
+        },
+        cyber: {
+          title: 'Cybersecurity Governance',
+          problem: 'Managing risk at institutional scale',
+          approach: 'Tailored security frameworks + continuous audit',
+          result: 'Strengthened security posture',
+        },
+        ad: {
+          title: 'Business Continuity & Disaster Recovery',
+          problem: 'Ensure critical operations continue during disasters',
+          approach: 'Recovery strategy + RTO/RPO optimization',
+          result: 'Guaranteed recovery capability',
+        },
+        datacenter: {
+          title: 'Redundancy & Resilience',
+          problem: 'Eliminate single points of failure',
+          approach: 'N+1 architecture + real-time synchronization',
+          result: 'Zero downtime assured',
+        },
+        monitoring: {
+          title: 'NSOC & Monitoring Strategy',
+          problem: 'Complete visibility over critical infrastructure',
+          approach: 'Premium monitoring stack + intelligent alerts',
+          result: 'Response time in minutes',
+        },
+        audit: {
+          title: 'Web Development & AI Automation',
+          problem: 'Modernize legacy applications with AI and web',
+          approach: 'Progressive architecture + ML pipelines',
+          result: 'Intelligent and scalable applications',
+        },
+      },
+    },
+    approach: {
+      title: 'Our Approach',
+      description: 'A proven 5-step methodology ensuring success through transparency and collaboration',
+      steps: {
+        step1: 'Strategic Assessment',
+        step2: 'Target Architecture Blueprint (HLD/LLD)',
+        step3: 'Security & Resilience Modeling',
+        step4: 'Deployment Roadmap',
+        step5: 'Governance & Documentation',
+      },
+      stepDescriptions: {
+        step1: 'Complete audit of your existing environment and clear definition of transformation objectives.',
+        step2: 'Detailed HLD/LLD documentation, aligned with enterprise standards and your constraints.',
+        step3: 'Resilience scenario modeling and comprehensive security frameworks.',
+        step4: 'Phased implementation planning with clear milestones and metrics.',
+        step5: 'Governance documentation, operational runbooks, and comprehensive team training.',
+      },
+      challenge: 'Challenge',
+      ourApproach: 'Our Approach',
+      measurableResult: 'Measurable Result',
+    },
+    trustSignals: {
+      title: 'Built for Trust & Compliance',
+      description: 'Enterprise-grade security with full transparency and third-party validation',
+      signals: {
+        iso: {
+          title: 'ISO 27001 Compliant',
+          description: 'Information Security Management meets international standards',
+        },
+        sla: {
+          title: 'SLA Minimum 98%',
+          description: 'Contractual uptime guarantee with multiplied redundant architecture',
+        },
+        soc2: {
+          title: 'SOC 2 Type II',
+          description: 'Security, availability, and confidentiality controls independently verified',
+        },
+        vendor: {
+          title: 'Vendor Certified',
+          description: 'AWS, Cisco, Fortinet, Palo Alto Networks partners with proven expertise',
+        },
+        audit: {
+          title: 'Independently Audited',
+          description: 'Third-party security reviews on all critical infrastructure designs',
+        },
+        zero: {
+          title: 'Zero Downtime Deployments',
+          description: 'Proven methodology for production migrations without service interruption',
+        },
+      },
+    },
+    ceo: {
+      title: 'Frédéric Masiala',
+      role: 'Founder & Lead Infrastructure Architect',
+      bio: '15+ years designing critical infrastructure across Europe and Africa.',
+    },
+    clients: {
+      title: 'Trusted by Leading Institutions',
+      description: 'Government and critical institutions across DRC and West Africa trust us with their infrastructure.',
+    },
+    certifications: {
+      title: 'Certifications & Methodologies',
+      description: 'Our experts are certified by industry-leading standards and vendors.',
+    },
+    contact: {
+      titlePart1: 'Ready to Transform',
+      titlePart2: 'Your Infrastructure?',
+      titlePart3: 'Let\'s Talk',
+      description: 'Schedule a confidential consultation with our lead architects. We\'ll assess your current environment and outline a path forward.',
+      callUs: 'Call Us',
+      speakDirectly: 'Speak directly with an architect',
+      emailUs: 'Email',
+      sendRequirements: 'Send us your requirements',
+      visitUs: 'Visit',
+      scheduleOnSite: 'Schedule an on-site meeting',
+      kinshasa: 'Kinshasa, DRC',
+      describeChallenge: 'Describe Your Challenge',
+      form: {
+        name: 'Full Name *',
+        namePlaceholder: 'Your name',
+        email: 'Email Address *',
+        emailPlaceholder: 'Your email',
+        company: 'Company *',
+        companyPlaceholder: 'Your company',
+        message: 'Message *',
+        messagePlaceholder: 'Describe your challenge...',
+        submit: 'Send',
+        sending: 'Sending...',
+        success: '✓ Thank you. We\'ll review and contact you within 24 hours.',
+        error: 'Error sending message. Please try again or call us directly.',
+      },
+    },
+    cta: {
+      zeroTolerance: 'Every project is built with zero tolerance for failure and full transparency with stakeholders',
+    },
+  },
+};
+
+export type Language = keyof typeof translations;

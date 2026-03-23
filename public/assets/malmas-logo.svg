@@ -1,0 +1,38 @@
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left arc -->
+  <path d="M 30 50 Q 30 100 80 110" stroke="#003DA5" stroke-width="12" fill="none" stroke-linecap="round"/>
+  
+  <!-- Left circle -->
+  <circle cx="30" cy="100" r="8" fill="#003DA5"/>
+  
+  <!-- Horizontal left -->
+  <line x1="40" y1="100" x2="100" y2="100" stroke="#003DA5" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Right arc -->
+  <path d="M 270 50 Q 270 100 220 110" stroke="#003DA5" stroke-width="12" fill="none" stroke-linecap="round"/>
+  
+  <!-- Right circle -->
+  <circle cx="270" cy="100" r="8" fill="#003DA5"/>
+  
+  <!-- Horizontal right -->
+  <line x1="260" y1="100" x2="200" y2="100" stroke="#003DA5" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- Left blue bracket -->
+  <line x1="100" y1="100" x2="120" y2="60" stroke="#0066CC" stroke-width="10" stroke-linecap="round"/>
+  <line x1="100" y1="100" x2="120" y2="140" stroke="#0066CC" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Right blue bracket -->
+  <line x1="200" y1="100" x2="180" y2="60" stroke="#00B8E6" stroke-width="10" stroke-linecap="round"/>
+  <line x1="200" y1="100" x2="180" y2="140" stroke="#00B8E6" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Wave pattern center -->
+  <path d="M 130 140 Q 145 75 160 120 Q 175 65 190 140" stroke="#003DA5" stroke-width="8" fill="none" stroke-linecap="round"/>
+  
+  <!-- Blue bottom line -->
+  <line x1="50" y1="130" x2="250" y2="130" stroke="#00B8E6" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Text -->
+  <text x="150" y="180" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#003DA5">
+    MALMAS
+  </text>
+</svg>
