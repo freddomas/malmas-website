@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    unoptimized: false,
-  },
-  i18n: {
-    locales: ['fr', 'en'],
-    defaultLocale: 'fr',
+    unoptimized: true,
   },
 };
 

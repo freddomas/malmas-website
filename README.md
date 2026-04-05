@@ -137,6 +137,14 @@ npm run build
 npm start
 ```
 
+### Export statique pour Hostinger
+```bash
+npm run build
+```
+
+Le site statique est généré dans `out/`.
+Déployez ensuite le contenu de `out/` dans `public_html/` sur Hostinger pour servir le site sans port `3000`.
+
 ### Type checking
 ```bash
 npm run type-check
@@ -177,6 +185,15 @@ CMD ["npm", "start"]
 Connecter le repo GitHub et configurer:
 - Build command: `npm run build`
 - Publish directory: `.next`
+
+### Hostinger
+
+Pour un hébergement Hostinger classique sans serveur Node exposé:
+- Exécuter `npm run build`
+- Récupérer le dossier `out/`
+- Publier le contenu de `out/` dans `public_html/`
+
+Cette configuration évite les `404` liés à `next start` sur le port `3000`.
 
 ## 🔐 Variables d'Environnement
 
