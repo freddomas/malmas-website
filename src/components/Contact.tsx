@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useI18n } from '@/lib/i18n/context';
 import { motion } from 'framer-motion';
+import CEO from '@/components/CEO';
 
 interface FormData {
   name: string;
@@ -63,6 +64,8 @@ export default function Contact() {
             {t('contact.description')}
           </p>
         </motion.div>
+
+        <CEO />
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {/* Quick Contact Options */}

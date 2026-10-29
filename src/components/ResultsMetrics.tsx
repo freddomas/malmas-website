@@ -17,8 +17,8 @@ export default function ResultsMetrics() {
     {
       labelKey: 'results.metrics.uptime.label',
       descriptionKey: 'results.metrics.uptime.description',
-      value: 98,
-      suffix: '%',
+      value: 95,
+      suffix: '%+',
       numberKey: 'uptime' as const,
     },
     {
@@ -69,7 +69,7 @@ export default function ResultsMetrics() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            startCounting('uptime', 98);
+            startCounting('uptime', 95);
             startCounting('clients', 10);
             startCounting('infrastructure', 250);
             startCounting('experience', 15);

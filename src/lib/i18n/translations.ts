@@ -26,7 +26,7 @@ export const translations = {
       metrics: {
         uptime: {
           label: 'Disponibilité Garantie',
-          description: 'Disponibilité minimum de 98% pour systèmes critiques',
+          description: 'Disponibilité minimum de 95% pour systèmes critiques',
         },
         clients: {
           label: 'Clients Institutionnels',
@@ -208,7 +208,7 @@ export const translations = {
       metrics: {
         uptime: {
           label: 'Guaranteed Uptime',
-          description: 'Minimum 98% uptime for mission-critical systems',
+          description: 'Minimum 95% uptime for mission-critical systems',
         },
         clients: {
           label: 'Institutional Clients',
