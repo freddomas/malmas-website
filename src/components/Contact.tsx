@@ -129,7 +129,7 @@ export default function Contact() {
               {t('contact.describeChallenge')}
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form method="post" onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-200 mb-2">

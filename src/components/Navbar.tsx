@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useI18n } from '@/lib/i18n/context';
 import clsx from 'clsx';
 
@@ -13,7 +14,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
       <div className="container-custom flex items-center justify-between h-20">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-1 sm:gap-3">
           <Image 
             src="/assets/logo.png" 
             alt="Logo MALMAS" 
@@ -22,7 +23,7 @@ export default function Navbar() {
             className="h-10 w-auto"
           />
           <span className="font-bold text-xl text-white">MALMAS</span>
-        </a>
+        </Link>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-12">
           <a href="#expertise" className="text-slate-400 hover:text-white transition-colors">
@@ -40,7 +41,7 @@ export default function Navbar() {
         </div>
 
         {/* Language Toggle & CTA */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-1 sm:gap-6">
           <div className="flex gap-2 bg-slate-800 rounded-lg p-1">
             <button
               onClick={() => setLanguage('fr')}

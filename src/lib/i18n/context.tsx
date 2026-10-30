@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback, useEffect } from 'react';
+import { createContext, useContext, useSyncExternalStore, useCallback } from 'react';
 import { translations, type Language } from './translations';
 
 interface I18nContextType {
@@ -11,33 +11,32 @@ interface I18nContextType {
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
+function getLanguage(): Language {
+  const savedLanguage = localStorage.getItem('language');
+  return savedLanguage === 'fr' || savedLanguage === 'en'
+    ? savedLanguage
+    : navigator.language.split('-')[0] === 'en' ? 'en' : 'fr';
+}
+
+function subscribeLanguage(onChange: () => void) {
+  window.addEventListener('storage', onChange);
+  window.addEventListener('languagechange', onChange);
+  return () => {
+    window.removeEventListener('storage', onChange);
+    window.removeEventListener('languagechange', onChange);
+  };
+}
+
+function getServerLanguage(): Language {
+  return 'fr';
+}
+
 export function I18nProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('fr');
-  const [mounted, setMounted] = useState(false);
-
-  // Initialize language from localStorage on mount
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'fr' || savedLanguage === 'en')) {
-      setLanguage(savedLanguage);
-    } else {
-      // Detect browser language if nothing is saved
-      const browserLang = navigator.language.split('-')[0];
-      if (browserLang === 'en') {
-        setLanguage('en');
-      } else {
-        setLanguage('fr');
-      }
-    }
-    setMounted(true);
+  const language = useSyncExternalStore(subscribeLanguage, getLanguage, getServerLanguage);
+  const setLanguage = useCallback((nextLanguage: Language) => {
+    localStorage.setItem('language', nextLanguage);
+    window.dispatchEvent(new Event('languagechange'));
   }, []);
-
-  // Save language to localStorage when it changes
-  useEffect(() => {
-    if (mounted) {
-      localStorage.setItem('language', language);
-    }
-  }, [language, mounted]);
 
   const t = useCallback((key: string): string => {
     const keys = key.split('.');
