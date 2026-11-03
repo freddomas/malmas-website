@@ -45,6 +45,7 @@ export default function Navbar() {
           <div className="flex gap-2 bg-slate-800 rounded-lg p-1">
             <button
               onClick={() => setLanguage('fr')}
+              aria-pressed={language === 'fr'}
               className={clsx(
                 'px-3 py-1 rounded transition-colors',
                 language === 'fr'
@@ -56,6 +57,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => setLanguage('en')}
+              aria-pressed={language === 'en'}
               className={clsx(
                 'px-3 py-1 rounded transition-colors',
                 language === 'en'
@@ -77,9 +79,12 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={t(isOpen ? 'nav.closeMenu' : 'nav.openMenu')}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
             className="md:hidden text-slate-400 hover:text-white"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
@@ -87,24 +92,22 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden border-t border-slate-800 bg-slate-900">
-          <div className="container-custom py-4 flex flex-col gap-4">
-            <a href="#expertise" className="text-slate-400 hover:text-white transition-colors">
-              {t('nav.expertise')}
-            </a>
-            <a href="#approach" className="text-slate-400 hover:text-white transition-colors">
-              {t('nav.approach')}
-            </a>
-            <a href="#clients" className="text-slate-400 hover:text-white transition-colors">
-              {t('nav.clients')}
-            </a>
-            <a href="#contact" className="text-slate-400 hover:text-white transition-colors">
-              {t('nav.contact')}
-            </a>
-          </div>
+      <div id="mobile-navigation" hidden={!isOpen} className="md:hidden border-t border-slate-800 bg-slate-900">
+        <div className="container-custom py-4 flex flex-col gap-4">
+          <a href="#expertise" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-white transition-colors">
+            {t('nav.expertise')}
+          </a>
+          <a href="#approach" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-white transition-colors">
+            {t('nav.approach')}
+          </a>
+          <a href="#clients" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-white transition-colors">
+            {t('nav.clients')}
+          </a>
+          <a href="#contact" onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-white transition-colors">
+            {t('nav.contact')}
+          </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useSyncExternalStore, useCallback } from 'react';
+import { createContext, useContext, useSyncExternalStore, useCallback, useEffect } from 'react';
 import { translations, type Language } from './translations';
 
 interface I18nContextType {
@@ -10,19 +10,30 @@ interface I18nContextType {
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
+let sessionLanguage: Language | undefined;
 
 function getLanguage(): Language {
-  const savedLanguage = localStorage.getItem('language');
-  return savedLanguage === 'fr' || savedLanguage === 'en'
-    ? savedLanguage
-    : navigator.language.split('-')[0] === 'en' ? 'en' : 'fr';
+  if (sessionLanguage) return sessionLanguage;
+  try {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage === 'fr' || savedLanguage === 'en') return savedLanguage;
+  } catch {
+    // Browser privacy settings can make storage unavailable.
+  }
+  return navigator.language.split('-')[0] === 'en' ? 'en' : 'fr';
 }
 
 function subscribeLanguage(onChange: () => void) {
-  window.addEventListener('storage', onChange);
+  const onStorageChange = (event: StorageEvent) => {
+    if (event.key === 'language' || event.key === null) {
+      sessionLanguage = undefined;
+      onChange();
+    }
+  };
+  window.addEventListener('storage', onStorageChange);
   window.addEventListener('languagechange', onChange);
   return () => {
-    window.removeEventListener('storage', onChange);
+    window.removeEventListener('storage', onStorageChange);
     window.removeEventListener('languagechange', onChange);
   };
 }
@@ -33,8 +44,16 @@ function getServerLanguage(): Language {
 
 export function I18nProvider({ children }: { children: React.ReactNode }) {
   const language = useSyncExternalStore(subscribeLanguage, getLanguage, getServerLanguage);
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
   const setLanguage = useCallback((nextLanguage: Language) => {
-    localStorage.setItem('language', nextLanguage);
+    sessionLanguage = nextLanguage;
+    try {
+      localStorage.setItem('language', nextLanguage);
+    } catch {
+      // Keep the selected language for this page even if persistence is denied.
+    }
     window.dispatchEvent(new Event('languagechange'));
   }, []);
 

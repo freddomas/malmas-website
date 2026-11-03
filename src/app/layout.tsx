@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'MALMAS - Sovereign Digital Infrastructure & Cybersecurity',
@@ -22,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="dark">
-      <body className={`${inter.className} bg-malmas-dark text-white`}>
+      <body className="bg-malmas-dark text-white">
         {children}
       </body>
     </html>

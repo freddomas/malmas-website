@@ -20,30 +20,16 @@ export default function Contact() {
     company: '',
     message: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [showSubmissionNotice, setShowSubmissionNotice] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', company: '', message: '' });
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    } catch {
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    } finally {
-      setIsSubmitting(false);
-    }
+    setShowSubmissionNotice(true);
   };
 
   return (
@@ -132,10 +118,11 @@ export default function Contact() {
             <form method="post" onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-semibold text-slate-200 mb-2">
+                  <label htmlFor="contact-name" className="block text-sm font-semibold text-slate-200 mb-2">
                     {t('contact.form.name')}
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -147,10 +134,11 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-slate-200 mb-2">
+                  <label htmlFor="contact-email" className="block text-sm font-semibold text-slate-200 mb-2">
                     {t('contact.form.email')}
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -163,10 +151,11 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-200 mb-2">
+                <label htmlFor="contact-company" className="block text-sm font-semibold text-slate-200 mb-2">
                   {t('contact.form.company')}
                 </label>
                 <input
+                  id="contact-company"
                   type="text"
                   name="company"
                   value={formData.company}
@@ -177,10 +166,11 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-slate-200 mb-2">
+                <label htmlFor="contact-message" className="block text-sm font-semibold text-slate-200 mb-2">
                   {t('contact.form.message')}
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
@@ -191,26 +181,20 @@ export default function Contact() {
                 />
               </div>
 
-              {submitStatus === 'success' && (
-                <div className="p-4 bg-green-500/20 border border-green-500 rounded-lg text-green-400 text-sm font-medium">
-                  {t('contact.form.success')}
-                </div>
-              )}
-
-              {submitStatus === 'error' && (
-                <div className="p-4 bg-red-500/20 border border-red-500 rounded-lg text-red-400 text-sm font-medium">
-                  {t('contact.form.error')}
+              {showSubmissionNotice && (
+                <div role="status" className="p-4 bg-red-500/20 border border-red-500 rounded-lg text-red-400 text-sm font-medium">
+                  {t('contact.form.unavailable')}{' '}
+                  <a href="mailto:contact@malmas.biz" className="underline">contact@malmas.biz</a>
                 </div>
               )}
 
               <motion.button
                 type="submit"
-                disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 disabled:opacity-50 text-white font-bold rounded-lg transition-all duration-300 uppercase tracking-wider"
               >
-                {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
+                {t('contact.form.submit')}
               </motion.button>
             </form>
           </div>

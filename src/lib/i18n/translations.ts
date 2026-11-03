@@ -2,6 +2,8 @@ export const translations = {
   fr: {
     nav: {
       home: 'Accueil',
+      openMenu: 'Ouvrir le menu',
+      closeMenu: 'Fermer le menu',
       expertise: 'Expertise',
       approach: 'Approche',
       clients: 'Clients',
@@ -172,9 +174,7 @@ export const translations = {
         message: 'Message *',
         messagePlaceholder: 'Décrivez votre défi...',
         submit: 'Envoyer',
-        sending: 'Envoi en cours...',
-        success: '✓ Merci. Nous examinons votre message et vous contacterons dans 24 heures.',
-        error: 'Erreur lors de l\'envoi. Veuillez réessayer ou nous appeler directement.',
+        unavailable: 'Aucun message n’a été envoyé. Ce formulaire n’est pas relié à un service d’envoi. Votre saisie est conservée. Contactez-nous par e-mail :',
       },
     },
     cta: {
@@ -184,6 +184,8 @@ export const translations = {
   en: {
     nav: {
       home: 'Home',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu',
       expertise: 'Expertise',
       approach: 'Approach',
       clients: 'Clients',
@@ -354,9 +356,7 @@ export const translations = {
         message: 'Message *',
         messagePlaceholder: 'Describe your challenge...',
         submit: 'Send',
-        sending: 'Sending...',
-        success: '✓ Thank you. We\'ll review and contact you within 24 hours.',
-        error: 'Error sending message. Please try again or call us directly.',
+        unavailable: 'No message was sent. This form is not connected to a delivery service. Your entries are preserved. Please email us at:',
       },
     },
     cta: {
