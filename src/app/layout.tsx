@@ -20,6 +20,21 @@ export default function RootLayout({
   return (
     <html lang="fr" className="dark">
       <body className="bg-malmas-dark text-white">
+        <noscript>
+          <style>{`
+            body [style*="opacity:0;"], body [style$="opacity:0"],
+            body [style*="opacity: 0;"], body [style$="opacity: 0"] {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+            nav { position: static !important; }
+            nav button { display: none !important; }
+            [data-animated-metric] { display: none !important; }
+            @media (max-width: 767px) {
+              #mobile-navigation { display: block !important; }
+            }
+          `}</style>
+        </noscript>
         {children}
       </body>
     </html>

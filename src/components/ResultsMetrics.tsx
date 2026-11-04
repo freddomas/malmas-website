@@ -150,6 +150,7 @@ export default function ResultsMetrics() {
               {/* Number Display */}
               <div className="mb-4">
                 <p className="text-5xl md:text-6xl font-black bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  <span data-animated-metric>
                   {metric.numberKey === 'uptime'
                     ? displayNumbers.uptime > 0
                       ? `${displayNumbers.uptime}`
@@ -159,6 +160,8 @@ export default function ResultsMetrics() {
                     : metric.numberKey === 'infrastructure'
                     ? displayNumbers.infrastructure
                     : displayNumbers.experience}
+                  </span>
+                  <noscript>{metric.value}</noscript>
                   <span className="text-3xl ml-1">{metric.suffix}</span>
                 </p>
               </div>
