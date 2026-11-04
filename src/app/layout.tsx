@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'MALMAS - Sovereign Digital Infrastructure & Cybersecurity',
@@ -22,7 +19,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="dark">
-      <body className={`${inter.className} bg-malmas-dark text-white`}>
+      <body className="bg-malmas-dark text-white">
+        <noscript>
+          <style>{`
+            body [style*="opacity:0;"], body [style$="opacity:0"],
+            body [style*="opacity: 0;"], body [style$="opacity: 0"] {
+              opacity: 1 !important;
+              transform: none !important;
+            }
+            nav { position: static !important; }
+            nav button { display: none !important; }
+            [data-animated-metric] { display: none !important; }
+            @media (max-width: 767px) {
+              #mobile-navigation { display: block !important; }
+            }
+          `}</style>
+        </noscript>
         {children}
       </body>
     </html>

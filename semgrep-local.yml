@@ -1,0 +1,28 @@
+# Offline baseline: retain the bundled eval rules and inspect CSS/config text.
+# These lexical checks do not constitute a comprehensive security audit.
+rules:
+  - id: codex-local-python-eval
+    languages: [python]
+    severity: ERROR
+    message: Avoid dynamic evaluation of Python expressions; use a specific parser.
+    pattern: eval(...)
+  - id: codex-local-js-eval
+    languages: [javascript, typescript]
+    severity: ERROR
+    message: Avoid dynamic JavaScript evaluation; use a specific parser.
+    pattern: eval(...)
+  - id: malmas-legacy-css-expression
+    languages: [generic]
+    severity: ERROR
+    message: Remove executable legacy CSS expressions.
+    pattern-regex: '(?i)\bexpression\s*\('
+  - id: malmas-javascript-css-url
+    languages: [generic]
+    severity: ERROR
+    message: Remove JavaScript URLs from CSS resources.
+    pattern-regex: '(?i)\burl\s*\(\s*["'']?\s*javascript\s*:'
+  - id: malmas-download-piped-to-shell
+    languages: [generic]
+    severity: ERROR
+    message: Inspect downloaded scripts before executing them.
+    pattern-regex: '\b(?:curl|wget)\b[^\n]*\|\s*(?:bash|sh)(?:[ \t]|$)'
