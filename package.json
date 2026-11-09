@@ -4,7 +4,7 @@
   "description": "MALMAS - Sovereign Digital Infrastructure & Cybersecurity",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "export": "next build",
     "start": "next start",
     "lint": "eslint src next.config.js eslint.config.mjs",
